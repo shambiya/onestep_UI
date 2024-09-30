@@ -1,0 +1,18 @@
+<div class="dialog-container">
+    <button class="close-btn" (click)="onClose()">&times;</button>
+    <h2>APPLICATION</h2>
+    <form [formGroup]="appForm" (ngSubmit)="onSave()">
+      <div class="form-group">
+        <label for="appName">APP Name</label>
+        <input id="appName" formControlName="appName" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="appLink">App Link</label>
+        <input id="appLink" formControlName="appLink" type="text" />
+      </div>
+      <div class="form-actions">
+        <button type="submit" color="primary">Save</button>
+      </div>
+    </form>
+  </div>
+  

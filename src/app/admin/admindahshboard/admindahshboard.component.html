@@ -1,0 +1,82 @@
+
+<mat-card>
+    <mat-card-content FxLayout="column">
+  
+      <div fxFlex="100">
+        <div class="responsive-table">
+         <div class="page-heading">
+            <div>
+              <span style="font-size: 18px;">User Management</span>
+              <mat-icon class="logout-icon">logout</mat-icon> <!-- Logout icon -->
+
+            </div>
+             <div class="action-buttons">
+                        <button class="material-button button-action" color="accent" id="addUser" (click)="openCreateUserDialog()">Add Lead</button>
+                        <button class="material-button button-action" color="accent" id="addMember" (click)="openCreateUserDialog()">Add Member</button>
+                        <button class="material-button button-action" color="accent" id="addApp" (click)="openCreateUserDialog()">Add App</button>
+                        <button class="material-button button-action" color="accent" id="addTracker" (click)="openCreateUserDialog()">Add Tracker</button>
+                    </div>
+          </div>
+
+  
+          <mat-table #table [dataSource]="dataSource">    
+           
+  
+            <ng-container matColumnDef="userName">
+              <mat-header-cell *matHeaderCellDef fxFlex="17%">
+                <span>User Name </span>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="17%">
+                <div>
+                  {{element.userName | titlecase}}
+                </div><br>
+              </mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="userEmpId">
+              <mat-header-cell *matHeaderCellDef fxFlex="17%">
+                <span>user EmpId </span>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="17%">
+                <div>
+                  {{element.userEmpId|titlecase}}
+                </div><br>
+              </mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="roles">
+              <mat-header-cell *matHeaderCellDef fxFlex="15%">
+                <span>Roles </span>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element" fxFlex="15%">
+                <div>
+                  {{element.roles.roleName}}
+                </div><br>
+              </mat-cell>
+            </ng-container>
+           
+  
+            <ng-container matColumnDef="action">
+              <mat-header-cell *matHeaderCellDef fxFlex="10%">
+                <span>Actions </span>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element; let i=index;" fxFlex="10%">
+                <div>
+                  <mat-icon *ngIf="element.active" class="icon-margin" matTooltip="Edit User" color="warn" id="{{element.email}}-edit" (click)="openEditUserDialog(element)">
+                    edit
+                  </mat-icon>
+                  <mat-icon *ngIf="element.active" class="icon-margin" color="warn" id="{{element.email}}-delete"
+                    (click)="openDeleteUserDialog(element)" matTooltip="Delete User">delete</mat-icon>
+                  <mat-icon *ngIf="!element.active" class="icon-margin" color="warn" id="{{element.email}}-restore"
+                    (click)="openDeleteUserDialog(element)" matTooltip="Restore User">restore</mat-icon>                
+                </div><br>
+              </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+          </mat-table>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>

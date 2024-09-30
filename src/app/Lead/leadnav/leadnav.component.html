@@ -1,0 +1,43 @@
+<mat-toolbar color="primary" class="navbar">
+    <mat-toolbar-row>
+        <span class="logo-text">NiQ</span>
+        <span class="spacer"></span>
+        <button mat-button routerLink="/team-lead">
+            <mat-icon>supervisor_account</mat-icon>
+            <span>Team Lead</span>
+        </button>
+        <button mat-button routerLink="/members">
+            <mat-icon>group</mat-icon>
+            <span>Members</span>
+        </button>
+        <button mat-button [matMenuTriggerFor]="applicationsMenu">
+            <mat-icon>apps</mat-icon>
+            <span>Applications</span>
+        </button>
+        <mat-menu #applicationsMenu="matMenu">
+            <a mat-menu-item href="https://www.facebook.com" target="_blank">
+                <mat-icon>facebook</mat-icon>
+                <span>Facebook</span>
+            </a>
+            <a mat-menu-item href="https://www.linkedin.com" target="_blank">
+                <mat-icon>linkedin</mat-icon>
+                <span>LinkedIn</span>
+            </a>
+            <a mat-menu-item href="mailto:someone@example.com">
+                <mat-icon>email</mat-icon>
+                <span>Email</span>
+            </a>
+        </mat-menu>
+        <button mat-button routerLink="/tickets">
+            <mat-icon>confirmation_number</mat-icon>
+            <span>Trackers</span>
+        </button>
+        <span class="flex-spacer"></span>
+        <button mat-button class="nav-button logout-button" routerLink="/logout">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <app-searchbar></app-searchbar> -->

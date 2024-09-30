@@ -1,0 +1,20 @@
+<div class="dialog-container">
+    <button class="close-btn" (click)="onClose()">&times;</button> <!-- Close icon -->
+    <h2>TRACKER</h2>
+    <form [formGroup]="trackerForm" (ngSubmit)="onSave()">
+      <div class="form-group">
+        <label for="empName">Tracker Name</label>
+        <input id="empName" formControlName="empName" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="empId">Tracker Link</label>
+        <input id="empId" formControlName="empId" type="text" />
+      </div>
+    
+    
+      <div class="form-actions">
+        <button type="submit" color="primary">Save</button>
+      </div>
+    </form>
+  </div>
+  

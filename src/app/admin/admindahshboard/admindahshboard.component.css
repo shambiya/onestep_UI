@@ -1,0 +1,91 @@
+/* Styles for the mat-card */
+mat-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+}
+
+/* Styles for the tab headers and content */
+.mat-tab-group {
+    margin-bottom: 16px;
+}
+
+.mat-tab-label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #3f51b5; /* Primary color */
+}
+
+.mat-tab-label-active {
+    color: #1e88e5; /* Accent color for active tab */
+    border-bottom: 2px solid #1e88e5;
+}
+
+.tab-content {
+    padding: 16px;
+}
+
+/* Page heading styles */
+.page-heading {
+    display: flex;
+    justify-content: space-between; /* Space between text and icon */
+    align-items: center;
+    position: relative; /* To position logout icon */
+    margin-bottom: 16px;
+    background: linear-gradient(to right, #3f51b5, #1e88e5);
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.heading-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Position the logout icon in the top-right corner */
+.logout-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+}
+
+/* Styles for the buttons */
+.material-button {
+    background-color: #1e88e5; /* Accent color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 8px; /* Added margin to space out buttons */
+    transition: background-color 0.3s ease;
+}
+
+/* Slightly shift buttons to the left */
+.material-button.shift-left {
+    margin-left: -8px; /* Adjust this value as needed */
+}
+
+.material-button:hover {
+    background-color: #1565c0; /* Darker shade on hover */
+}
+
+/* Icon margin and tooltip styles */
+.icon-margin {
+    margin-right: 8px;
+}
+
+.mat-icon {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mat-icon:hover {
+    color: #1e88e5; /* Accent color on hover */
+}
